@@ -5,6 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAILFORGE</title>
     <style>
+/* Slider Container */
+.simple-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Makes images snap into place */
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px;
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.simple-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual Slides */
+.slide-item {
+    flex: 0 0 80%; /* Each slide takes up 80% of the screen width */
+    scroll-snap-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.slide-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Navigation Buttons */
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.nav-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
     
         /* The Side Navigation Menu */
 .sidebar {
@@ -79,7 +131,7 @@
         .header {
             height: 300px;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('logo.png') no-repeat center center/cover;
+                        url('pack_icon.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -163,57 +215,72 @@
 <body>
 
     <header class="header">
-        <h1>RailForge India</h1>
+        <h1>PAMBAN OCEANIC ROUTE</h1>
     </header>
     <!-- The Sidebar -->
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Home</a>
-  <a href="about.html">About Us</a>
+  <a href="../../index.html">Home</a>
+  <a href="../../about.html">About Us</a>
 </div>
 
 <!-- The Menu Button -->
 <button class="openbtn" onclick="openNav()">&#9776;</button>
 
+ <div class="simple-slider" id="imageSlider">
+    <div class="slide-item"><img src="pack_icon.png" alt="img 1"></div>
+</div>
 
-    <div class="container">
-        <!-- START OF CARD -->
-        <div class="card">
-            <img src="files/WDP4D/pack_icon.png" alt="Train Preview image" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">WDP-4D LOCOMITIVE ADDON</h2>
-                <p class="card-desc">High-detail WDP-4D DESEL LOCOMOTIVE with custom sounds and interior.</p>
-                <a href="files/WDP4D/wdp4D.html" class="download-btn">VIEW ADDON</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="files/icfblue/pack_icon.jpg" alt="Train Preview image" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">ICF BLUE PACK</h2>
-                <p class="card-desc">High-detail ICF BLUE COACHES with custom sounds and interior.</p>
-                <a href="files/icfblue/icfblue.html" class="download-btn">VIEW ADDON</a>
-            </div>
-        </div>
-        <div class="card">
-    <img src="files/ramsrou/pack_icon.jpg" alt="Train Preview image" class="card-image">
-    <div class="card-content">
-        <h2 class="card-title">PAMBAN OCEANIC ROUTE</h2>
-        <p class="card-desc">High-detail Route with 3 stations.</p>
-        <a href="files/ramsrou/ramsrou.html" class="download-btn">VIEW ROUTE</a>
-    </div>
-    </div>
-    <div class="card">
-    <img src="files/mtc/pack_icon.png" alt="Train Preview image" class="card-image">
-    <div class="card-content">
-        <h2 class="card-title">MTC controller</h2>
-        <p class="card-desc">An Addon that controls our trains in a realistic way.</p>
-        <a href="files/mtc/mtc.html" class="download-btn">VIEW ADDON</a>
-    </div>
-    </div>
+<!-- Navigation Buttons -->
+<div class="slider-nav">
+    <button class="nav-btn" onclick="scrollSlider(-300)">&#10094; Prev</button>
+    <button class="nav-btn" onclick="scrollSlider(300)">Next &#10095;</button>
+</div>
+   <div style="font-family: Arial, sans-serif; line-height: 1.6; padding: 15px; background-color: #0a0f1f; color: #e5e7eb; border-radius: 10px;">
+
+  <h2 style="color: #facc15; margin-bottom: 5px;">
+    🚆 MTC Controller Addon
+  </h2>
+  
+  <p>
+    The <b>MTC Controller Addon</b> is the core system that powers your train addons, 
+    allowing you to control and operate trains smoothly in Minecraft.
+  </p>
+
+  <p>
+    This addon provides essential tools and mechanics required for running locomotives 
+    and coaches, making your railway system fully functional and interactive.
+  </p>
+
+  <h3 style="color: #facc15;">🔹 Features:</h3>
+  <ul style="padding-left: 20px;">
+    <li>Advanced <b>train control system</b></li>
+    <li>Includes <b>railway tracks</b> for building routes</li>
+    <li>Easy-to-use <b>train controller</b> interface</li>
+    <li>Smooth and realistic train movement</li>
+    <li>Supports multiple train addons</li>
+  </ul>
+
+  <p>
+    Use this addon as the backbone of your railway world and bring full control 
+    to your trains with ease.
+  </p>
+
+  <p style="color: #facc15; font-weight: bold;">
+    🚄 Essential addon for train systems
+  </p>
+
+</div>
+
+    <div class ="container">
         
-        <!-- END OF CARD -->
+    <a href="https://www.mediafire.com/file/qu29vamdbkpf0wr/PAMBAN_OCEANIC_EXPRESS_ROUTE_OFFICIAL.zip/file" class="download-btn">DOWNLOAD(mediafire)</a>
     </div>
-    
+    <!-- Simple Horizontal Slider -->
+
+
+
+
 
 </body>
 <script>
@@ -224,6 +291,15 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
+function scrollSlider(amount) {
+    const slider = document.getElementById('imageSlider');
+    slider.scrollBy({
+        left: amount,
+        behavior: 'smooth'
+    });
+}
+
+
 </script>
 
 </html>
