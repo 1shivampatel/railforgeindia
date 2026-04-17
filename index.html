@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAILFORGE</title>
     <style>
+    .search-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+    border-color: var(--primary); /* Uses your Minecraft green/blue */
+}
+
     
         /* The Side Navigation Menu */
 .sidebar {
@@ -171,10 +191,17 @@
   <a href="#">Home</a>
   <a href="about.html">About Us</a>
   <a href="bugrepo.html">Bug Report</a>
+  <a href="#">Update Log</a>
+  <a href="bugrepo.html">Bug Report</a>
+  
 </div>
 
 <!-- The Menu Button -->
 <button class="openbtn" onclick="openNav()">&#9776;</button>
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Search for addons, trains, or worlds...">
+</div>
+
 
 
     <div class="container">
@@ -218,6 +245,27 @@
 
 </body>
 <script>
+function searchCards() {
+    // Get the search input and convert to lowercase
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Get all the cards in your container
+    let cards = document.getElementsByClassName('card');
+
+    for (let i = 0; i < cards.length; i++) {
+        // Look at the title and description inside the card
+        let title = cards[i].querySelector('.card-title').innerText.toLowerCase();
+        let desc = cards[i].querySelector('.card-desc').innerText.toLowerCase();
+
+        // If the text matches, show the card; otherwise, hide it
+        if (title.includes(input) || desc.includes(input)) {
+            cards[i].style.display = ""; // Show
+        } else {
+            cards[i].style.display = "none"; // Hide
+        }
+    }
+}
+
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
 }
