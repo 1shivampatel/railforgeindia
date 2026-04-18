@@ -5,26 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAILFORGE</title>
     <style>
-    .search-container {
-    max-width: 180px;
-    margin: 20px 20px;
-    padding: 0 0px;
-}
-
-#searchInput {
-    width: 100%;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-#searchInput:focus {
-    border-color: var(--primary); /* Uses your Minecraft green/blue */
-}
-
     
         /* The Side Navigation Menu */
 .sidebar {
@@ -183,88 +163,95 @@
 <body>
 
     <header class="header">
-        <h1>RailForge India</h1>
+        <h1>RailForge India<br>(Bug Report)</h1>
     </header>
     <!-- The Sidebar -->
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Home</a>
-  <a href="update.html">Update Log</a>
-  <a href="bugrepo.html">Bug Report</a>
-  <a href="about.html">About Us</a>
-  
-</div>
+<!-- home btn -->
+<a href="index.html" class="mc-home-btn">HOME</a>
 
-<!-- The Menu Button -->
-<button class="openbtn" onclick="openNav()">&#9776;</button>
-<div class="search-container">
-    <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Search for stuffs ...">
-</div>
+<style>
+  .mc-home-btn {
+    /* Position */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
 
-
-
-    <div class="container">
-        <!-- START OF CARD -->
-        <div class="card">
-            <img src="files/WDP4D/pack_icon.png" alt="Train Preview image" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">WDP-4D LOCOMITIVE ADDON</h2>
-                <p class="card-desc">High-detail WDP-4D DESEL LOCOMOTIVE with custom sounds and interior.</p>
-                <a href="files/WDP4D/wdp4D.html" class="download-btn">VIEW ADDON</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="files/icfblue/pack_icon.jpg" alt="Train Preview image" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">ICF BLUE PACK</h2>
-                <p class="card-desc">High-detail ICF BLUE COACHES with custom sounds and interior.</p>
-                <a href="files/icfblue/icfblue.html" class="download-btn">VIEW ADDON</a>
-            </div>
-        </div>
-        <div class="card">
-    <img src="files/ramsrou/pack_icon.jpg" alt="Train Preview image" class="card-image">
-    <div class="card-content">
-        <h2 class="card-title">PAMBAN OCEANIC ROUTE</h2>
-        <p class="card-desc">High-detail Route with 3 stations.</p>
-        <a href="files/ramsrou/ramsrou.html" class="download-btn">VIEW ROUTE</a>
-    </div>
-    </div>
-    <div class="card">
-    <img src="files/mtc/pack_icon.png" alt="Train Preview image" class="card-image">
-    <div class="card-content">
-        <h2 class="card-title">MTC controller</h2>
-        <p class="card-desc">An Addon that controls our trains in a realistic way.</p>
-        <a href="files/mtc/mtc.html" class="download-btn">VIEW ADDON</a>
-    </div>
-    </div>
-        
-        <!-- END OF CARD -->
-    </div>
+    /* Minecraft Aesthetic */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(62, 175, 52, 0.5); /* Green with 50% transparency */
+    color: white;
+    text-decoration: none;
+    font-family: "Courier New", Courier, monospace; /* Blocky font vibe */
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
     
+    /* Border Styling */
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.2);
+    
+    /* Responsive adjustment */
+    font-size: 16px;
+    transition: all 0.2s;
+  }
+
+  .mc-home-btn:hover {
+    background-color: rgba(62, 175, 52, 0.8);
+    transform: scale(1.05);
+    border-color: white;
+  }
+
+  /* Adjusts for smaller screens (Mobile) */
+  @media (max-width: 600px) {
+    .mc-home-btn {
+      padding: 8px 15px;
+      font-size: 14px;
+      top: 10px;
+      left: 10px;
+    }
+  }
+</style>
+
+
+
+    <div style="font-family: Arial, sans-serif; line-height: 1.7; padding: 18px; background-color: #0f172a; color: #e2e8f0; border-radius: 0px;">
+        
+          <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+
+  <h2 style="color: #f97316; margin-bottom: 8px;">
+    🛠️ RailForge India Website updates
+  </h2>
+  
+    <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+
+  <p>
+    <b>VERSON :- 0.2.2</b> 
+  </p>
+
+  <p>
+    - make search input box better and smaller
+    - fixed bugs 
+  </p>
+
+  
+  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+  <p>
+    <b>VERSON :- 0.2.1</b> 
+  </p>
+
+  <p>
+    - fixed bugs 
+  </p>
+
+  
+  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+  
+
+</div>
 
 </body>
 <script>
-function searchCards() {
-    // Get the search input and convert to lowercase
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    
-    // Get all the cards in your container
-    let cards = document.getElementsByClassName('card');
-
-    for (let i = 0; i < cards.length; i++) {
-        // Look at the title and description inside the card
-        let title = cards[i].querySelector('.card-title').innerText.toLowerCase();
-        let desc = cards[i].querySelector('.card-desc').innerText.toLowerCase();
-
-        // If the text matches, show the card; otherwise, hide it
-        if (title.includes(input) || desc.includes(input)) {
-            cards[i].style.display = ""; // Show
-        } else {
-            cards[i].style.display = "none"; // Hide
-        }
-    }
-}
-
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
 }
