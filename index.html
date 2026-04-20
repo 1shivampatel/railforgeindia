@@ -1,274 +1,97 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAILFORGE</title>
-    <style>
-    .search-container {
-    max-width: 180px;
-    margin: 20px 20px;
-    padding: 0 0px;
-}
-
-#searchInput {
-    width: 100%;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-#searchInput:focus {
-    border-color: var(--primary); /* Uses your Minecraft green/blue */
-}
 
     
-        /* The Side Navigation Menu */
-.sidebar {
-    height: 100%;
-    width: 0; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.3s; /* Slide effect */
-    padding-top: 60px;
-}
-
-/* Links inside the sidebar */
-.sidebar a {
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #818181;
-    display: block;
-    transition: 0.2s;
-}
-
-.sidebar a:hover {
-    color: #f1f1f1;
-    background-color: #2e7d32; /* Green highlight */
-}
-
-/* The Close Button (X) */
-.sidebar .closebtn {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 36px;
-}
-
-/* The 3-line Menu Button */
-.openbtn {
-    font-size: 30px;
-    cursor: pointer;
-    background: rgba(0,0,0,0.5);
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    position: fixed; /* Stays in the corner */
-    top: 15px;
-    left: 15px;
-    z-index: 999;
-    border-radius: 5px;
-}
-
-.openbtn:hover {
-    background-color: #444;
-}
-
-        :root {
-            --primary: #2e7d32; /* Minecraft Green */
-            --dark: #1a1a1a;
-            --light: #f4f4f4;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: var(--light);
-        }
-        
-
-        /* Hero Section */
-        .header {
-            height: 300px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('logo.png') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            margin: 0;
-        }
-
-        /* Card Container */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        /* The Card */
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background-color: #ddd;
-        }
-
-        .card-content {
-            padding: 15px;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            margin: 0 0 10px 0;
-            color: var(--dark);
-        }
-
-        .card-desc {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.4;
-            height: 40px;
-            overflow: hidden;
-        }
-
-        .download-btn {
-            display: block;
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        .download-btn:hover {
-            background: #1b5e20;
-        }
-        
-       
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header class="header">
-        <h1>RailForge India</h1>
-    </header>
-    <!-- The Sidebar -->
+<header class="header">
+    <h1>RailForge India</h1>
+</header>
+
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">Home</a>
   <a href="update.html">Update Log</a>
   <a href="bugrepo.html">Bug Report</a>
   <a href="about.html">About Us</a>
-  
 </div>
 
-<!-- The Menu Button -->
 <button class="openbtn" onclick="openNav()">&#9776;</button>
+
 <div class="search-container">
     <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Search for stuffs ...">
 </div>
 
+<div class="container">
 
-
-    <div class="container">
-        <!-- START OF CARD -->
-        <div class="card">
-            <img src="files/WDP4D/pack_icon.png" alt="Train Preview image" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">WDP-4D LOCOMITIVE ADDON</h2>
-                <p class="card-desc">High-detail WDP-4D DESEL LOCOMOTIVE with custom sounds and interior.</p>
-                <a href="files/WDP4D/wdp4D.html" class="download-btn">VIEW ADDON</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="files/icfblue/pack_icon.jpg" alt="Train Preview image" class="card-image">
-            <div class="card-content">
-                <h2 class="card-title">ICF BLUE PACK</h2>
-                <p class="card-desc">High-detail ICF BLUE COACHES with custom sounds and interior.</p>
-                <a href="files/icfblue/icfblue.html" class="download-btn">VIEW ADDON</a>
-            </div>
-        </div>
-        <div class="card">
-    <img src="files/ramsrou/pack_icon.jpg" alt="Train Preview image" class="card-image">
-    <div class="card-content">
-        <h2 class="card-title">PAMBAN OCEANIC ROUTE</h2>
-        <p class="card-desc">High-detail Route with 3 stations.</p>
-        <a href="files/ramsrou/ramsrou.html" class="download-btn">VIEW ROUTE</a>
-    </div>
-    </div>
     <div class="card">
-    <img src="files/mtc/pack_icon.png" alt="Train Preview image" class="card-image">
-    <div class="card-content">
-        <h2 class="card-title">MTC controller</h2>
-        <p class="card-desc">An Addon that controls our trains in a realistic way.</p>
-        <a href="files/mtc/mtc.html" class="download-btn">VIEW ADDON</a>
+        <img src="files/WDP4D/pack_icon.png" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">WDP-4D LOCOMITIVE ADDON</h2>
+            <p class="card-desc">High-detail WDP-4D DESEL LOCOMOTIVE with custom sounds and interior.</p>
+            <a href="files/WDP4D/wdp4D.html" class="download-btn">VIEW ADDON</a>
+        </div>
     </div>
-    </div>
-    <div class="card">
-    <img src="files/rasdugrou/pack_icon.jpg" alt="Train Preview image" class="card-image">
-    <div class="card-content">
-        <h2 class="card-title">Chenab Valley Minecraft Rail Route</h2>
-        <p class="card-desc">Experience one of the most breathtaking railway stretches, now built in Minecraft.</p>
-        <a href="files/rasdugrou/rasdugrou.html" class="download-btn">VIEW ROUTE</a>
-    </div>
-    </div>
-        
-        <!-- END OF CARD -->
-    </div>
-    
 
-</body>
+    <div class="card">
+        <img src="files/icfblue/pack_icon.jpg" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">ICF BLUE PACK</h2>
+            <p class="card-desc">High-detail ICF BLUE COACHES with custom sounds and interior.</p>
+            <a href="files/icfblue/icfblue.html" class="download-btn">VIEW ADDON</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="files/ramsrou/pack_icon.jpg" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">PAMBAN OCEANIC ROUTE</h2>
+            <p class="card-desc">High-detail Route with 3 stations.</p>
+            <a href="files/ramsrou/ramsrou.html" class="download-btn">VIEW ROUTE</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="files/mtc/pack_icon.png" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">MTC controller</h2>
+            <p class="card-desc">An Addon that controls our trains in a realistic way.</p>
+            <a href="files/mtc/mtc.html" class="download-btn">VIEW ADDON</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="files/rasdugrou/pack_icon.jpg" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">Chenab Valley Minecraft Rail Route</h2>
+            <p class="card-desc">Experience one of the most breathtaking railway stretches, now built in Minecraft.</p>
+            <a href="files/rasdugrou/rasdugrou.html" class="download-btn">VIEW ROUTE</a>
+        </div>
+    </div>
+
+</div>
+
 <script>
 function searchCards() {
-    // Get the search input and convert to lowercase
     let input = document.getElementById('searchInput').value.toLowerCase();
-    
-    // Get all the cards in your container
     let cards = document.getElementsByClassName('card');
 
     for (let i = 0; i < cards.length; i++) {
-        // Look at the title and description inside the card
         let title = cards[i].querySelector('.card-title').innerText.toLowerCase();
         let desc = cards[i].querySelector('.card-desc').innerText.toLowerCase();
 
-        // If the text matches, show the card; otherwise, hide it
         if (title.includes(input) || desc.includes(input)) {
-            cards[i].style.display = ""; // Show
+            cards[i].style.display = "";
         } else {
-            cards[i].style.display = "none"; // Hide
+            cards[i].style.display = "none";
         }
     }
 }
@@ -282,4 +105,6 @@ function closeNav() {
 }
 </script>
 
+</body>
 </html>
+```
