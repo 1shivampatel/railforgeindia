@@ -1,101 +1,146 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAILFORGE</title>
-
-    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.cs">
 </head>
-
 <body>
 
-<header class="header">
-    <h1>RailForge India</h1>
-</header>
-
-<div id="mySidebar" class="sidebar">
+    <header class="header">
+        <h1>RailForge India<br>(HOME)</h1>
+    </header>
+    <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">Home</a>
   <a href="update.html">Update Log</a>
   <a href="bugrepo.html">Bug Report</a>
   <a href="about.html">About Us</a>
 </div>
-
 <button class="openbtn" onclick="openNav()">&#9776;</button>
+    <!-- The Sidebar -->
+<!-- home btn -->
+<div style=""><a href="addon.html" class="download-btn">🔍 BROWSE ADDONS</a></div>
+<div><a href="world.html" class="download-btn">🔍 Browse world/maps</a></div>
 
-<div class="search-container">
-    <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Search for stuffs ...">
-</div>
 
-<div class="container">
+<style>
+  .mc-home-btn {
+    /* Position */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
 
-    <div class="card">
-        <img src="files/WDP4D/pack_icon.png" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">WDP-4D LOCOMITIVE ADDON</h2>
-            <p class="card-desc">High-detail WDP-4D DESEL LOCOMOTIVE with custom sounds and interior.</p>
-            <a href="files/WDP4D/wdp4D.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
+    /* Minecraft Aesthetic */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(62, 175, 52, 0.5); /* Green with 50% transparency */
+    color: white;
+    text-decoration: none;
+    font-family: "Courier New", Courier, monospace; /* Blocky font vibe */
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+    
+    /* Border Styling */
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.2);
+    
+    /* Responsive adjustment */
+    font-size: 16px;
+    transition: all 0.2s;
+  }
 
-    <div class="card">
-        <img src="files/icfblue/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">ICF BLUE PACK</h2>
-            <p class="card-desc">High-detail ICF BLUE COACHES with custom sounds and interior.</p>
-            <a href="files/icfblue/icfblue.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
+  .mc-home-btn:hover {
+    background-color: rgba(62, 175, 52, 0.8);
+    transform: scale(1.05);
+    border-color: white;
+  }
 
-    <div class="card">
-        <img src="files/ramsrou/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">PAMBAN OCEANIC ROUTE</h2>
-            <p class="card-desc">High-detail Route with 3 stations.</p>
-            <a href="files/ramsrou/ramsrou.html" class="download-btn">VIEW ROUTE</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="files/mtc/pack_icon.png" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">MTC controller</h2>
-            <p class="card-desc">An Addon that controls our trains in a realistic way.</p>
-            <a href="files/mtc/mtc.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="files/rasdugrou/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">Chenab Valley Minecraft Rail Route</h2>
-            <p class="card-desc">Experience one of the most breathtaking railway stretches, now built in Minecraft.</p>
-            <a href="files/rasdugrou/rasdugrou.html" class="download-btn">VIEW ROUTE</a>
-        </div>
-    </div>
-
-</div>
-
-<script>
-function searchCards() {
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    let cards = document.getElementsByClassName('card');
-
-    for (let i = 0; i < cards.length; i++) {
-        let title = cards[i].querySelector('.card-title').innerText.toLowerCase();
-        let desc = cards[i].querySelector('.card-desc').innerText.toLowerCase();
-
-        if (title.includes(input) || desc.includes(input)) {
-            cards[i].style.display = "";
-        } else {
-            cards[i].style.display = "none";
-        }
+  /* Adjusts for smaller screens (Mobile) */
+  @media (max-width: 600px) {
+    .mc-home-btn {
+      padding: 8px 15px;
+      font-size: 14px;
+      top: 10px;
+      left: 10px;
     }
-}
+  }
+</style>
 
+
+
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background-color: #0f172a; color: #e2e8f0; border-radius: 0px;">
+
+  <h1 style="color: #38bdf8; margin-bottom: 5px; text-align: center;">
+    🚆 RAILFORGE INDIA
+  </h1>
+
+  <p style="text-align: center; color: #94a3b8; margin-top: 0;">
+    Building Realistic Indian Train Experiences in Minecraft
+  </p>
+  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+  <h2 style="color: #38bdf8;">NEWS/UPDATES</h2>
+  <p>
+    -> UI update in the website is arrived ,need help using website?<br>
+    -> WDP-4D is releasing soon !<br>
+    -> ICF coaches are also releasing soon !<br>
+    
+  </p>
+  
+
+  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+
+  <h2 style="color: #38bdf8;">About Us</h2>
+  <p>
+    <b>RAILFORGE INDIA</b> is a passionate team of creators dedicated to bringing 
+    realistic Indian railway content into Minecraft. We focus on creating high-quality 
+    locomotives, detailed interiors, and immersive train systems for players who love 
+    trains and creativity.
+  </p>
+
+  <p>
+    Our goal is to recreate the feel of Indian Railways with accuracy, performance, 
+    and fun gameplay. From powerful diesel engines to detailed cabins, every addon 
+    is crafted with attention to detail.
+  </p>
+
+  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+
+  <h2 style="color: #38bdf8;">👥 Members</h2>
+
+  <ul style="padding-left: 20px;">
+    <li><b>Ryzek Gaming</b> – ADDON Creator & Developer</li>
+    <li><b>Life Made Gamerz</b> – Co-Creator </li>
+    <li><b>Lucifergamer253(Pixel Nomad)</b> – Route/Map creator</li>
+    <li><b>PowerCookie1547</b> – Route/Map creator</li>
+    <li><b>RyzPlayZ(Xx1harshit_1)</b> – Route/Map creator</li>
+  </ul>
+
+  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+
+  <p style="text-align: center; color: #38bdf8; font-weight: bold;">
+    🚄 Crafted with passion for train lovers across India
+  </p>
+  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+
+  <p style="text-align: center; color: #38bdf8; font-weight: bold;">
+    📷 YOUTUBE LINKS
+    <a href="https://youtube.com/@ryzekgaming?si=H9eIpEcS3veHLgh4" class="download-btn">RYZEK GAMING</a>
+    <a href="https://youtube.com/@lifemadegamer7343?si=T4C9N54E8P5D1Auh" class="download-btn">LIFE MADE GAMERZ</a>
+    <a href="https://youtube.com/@pixel_nomad11?si=z6wVTbRXv9ZNv6Hm" class="download-btn">PIXEL NOMAD</a>
+    <a href="https://youtube.com/@xx1harshit_1?si=G3Aet-XNlOYwCPFD" class="download-btn">Xx1harshit_1</a>
+    <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+    
+  </p>
+  
+  
+
+</div>
+
+</body>
+<script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
 }
@@ -105,6 +150,4 @@ function closeNav() {
 }
 </script>
 
-</body>
 </html>
-```

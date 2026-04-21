@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAILFORGE</title>
+
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <h1>RailForge India<br>(Worlds)</h1>
+</header>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="update.html">Update Log</a>
+  <a href="bugrepo.html">Bug Report</a>
+  <a href="about.html">About Us</a>
+</div>
+
+<button class="openbtn" onclick="openNav()">&#9776;</button>
+
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Search for stuffs ...">
+</div>
+
+<div class="container">
+
+    
+
+    <div class="card">
+        <img src="files/ramsrou/pack_icon.jpg" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">PAMBAN OCEANIC ROUTE</h2>
+            <p class="card-desc">High-detail Route with 3 stations.</p>
+            <a href="files/ramsrou/ramsrou.html" class="download-btn">VIEW ROUTE</a>
+        </div>
+    </div>
+
+    
+
+    <div class="card">
+        <img src="files/rasdugrou/pack_icon.jpg" class="card-image">
+        <div class="card-content">
+            <h2 class="card-title">Chenab Valley Minecraft Rail Route</h2>
+            <p class="card-desc">Experience one of the most breathtaking railway stretches, now built in Minecraft.</p>
+            <a href="files/rasdugrou/rasdugrou.html" class="download-btn">VIEW ROUTE</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function searchCards() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('card');
+
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].querySelector('.card-title').innerText.toLowerCase();
+        let desc = cards[i].querySelector('.card-desc').innerText.toLowerCase();
+
+        if (title.includes(input) || desc.includes(input)) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
+</script>
+
+</body>
+</html>
