@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h3>UPLOAD YOUR FILES TO WEBSITE</h3>
+
+    NAME (Folder Name):<br>
+    <input type="text" id="folderName"><br><br>
+
+    DESCRIPTION:<br>
+    <input type="text" id="description"><br><br>
+
+    <!-- Simple file input -->
+    CHOOSE FILE: <input type="file" id="fileInput" onchange="updateName()"><br>
+    <span id="nameDisplay">NO SELECT</span><br><br>
+
+    <button onclick="handleUpload()">UPLOAD</button>
+
+    <div id="status"></div>
+
+    <script>
+        function updateName() {
+            const input = document.getElementById('fileInput');
+            document.getElementById('nameDisplay').innerText = input.files.length > 0 ? input.files[0].name : "NO SELECT";
+        }
+
+        async function handleUpload() {
+            const folder = document.getElementById('folderName').value;
+            const fileInput = document.getElementById('fileInput');
+            const status = document.getElementById('status');
+
+            if (!folder || fileInput.files.length === 0) {
+                status.innerHTML = '<font color="red">CONDITION FAILED: Missing folder or file</font>';
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = async () => {
+                const base64Content = reader.result.split(',')[1];
+                
+                // --- UPDATE THESE THREE LINES ---
+                const token = 'process.env.API_KEY';
+                const owner = '1shivampatel';
+                const repo = 'railforgeindia';
+                
+                const path = folder + "/" + file.name;
+                const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+
+                try {
+                    const response = await fetch(url, {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': 'Bearer ' + token,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: "Upload to folder " + folder,
+                            content: base64Content
+                        })
+                    });
+
+                    if (response.ok) {
+                        status.innerHTML = '<font color="green">SUCCESS: Uploaded to ' + folder + '</font>';
+                    } else {
+                        const err = await response.json();
+                        status.innerHTML = '<font color="red">CONDITION FAILED: ' + err.message + '</font>';
+                    }
+                } catch (e) {
+                    status.innerHTML = '<font color="red">ERROR: ' + e.message + '</font>';
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>
