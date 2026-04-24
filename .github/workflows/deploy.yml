@@ -1,0 +1,22 @@
+name: Deploy with Secrets
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Replace placeholder with secret
+        run: 
+         
+          sed -i "s/APIKEY/${{ secrets.SECKEY }}/g" pass=12196887.html
+
+      - name: Deploy (Optional)
+        # Add your deployment steps here (e.g., to GitHub Pages)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
