@@ -1,22 +1,16 @@
-name: Deploy with Secrets
-on:
-  push:
-    branches: [ main ]
-
+name: Fix My Key
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Replace placeholder with secret
-        run: |
-         
-          sed -i "s/APIKEY/${{ secrets.SECKEY }}/g" pass=12196887.html
-
-      - name: Deploy (Optional)
-        # Add your deployment steps here (e.g., to GitHub Pages)
+      - uses: actions/checkout@v4
+      - name: Replace Key
+        # This looks into kjs.html and swaps the fake word for the real secret
+        run: sed -i "s/API_KEY/${{ secrets.SECKEY}}/g" pass=12196887.html
+      - name: Deploy to Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+      - name: Finish Deploy
+        uses: actions/deploy-pages@v4
