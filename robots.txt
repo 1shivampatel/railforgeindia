@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+
+Sitemap: https://1shivampatel.github.io/railforgeindia/sitemap.xml
