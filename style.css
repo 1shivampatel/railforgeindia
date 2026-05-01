@@ -266,10 +266,7 @@ body {
     animation: zoomIn 0.6s ease;
 }
 
-.slide-item:hover {
-    transform: scale(1.02);
-    animation: float 1s infinite;
-}
+
 
 .slide-item img {
     width: 100%;
