@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAILFORGE</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>ICF BLUE COACH BY CreativePlayz</h1>
+    </header>
+    <!-- The Sidebar -->
+<!-- home btn -->
+<a href="../../index.html" class="mc-home-btn">HOME</a>
+
+<style>
+  .mc-home-btn {
+    /* Position */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+
+    /* Minecraft Aesthetic */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(62, 175, 52, 0.5); /* Green with 50% transparency */
+    color: white;
+    text-decoration: none;
+    font-family: "Courier New", Courier, monospace; /* Blocky font vibe */
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+    
+    /* Border Styling */
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.2);
+    
+    /* Responsive adjustment */
+    font-size: 16px;
+    transition: all 0.2s;
+  }
+
+  .mc-home-btn:hover {
+    background-color: rgba(62, 175, 52, 0.8);
+    transform: scale(1.05);
+    border-color: white;
+  }
+
+  /* Adjusts for smaller screens (Mobile) */
+  @media (max-width: 600px) {
+    .mc-home-btn {
+      padding: 8px 15px;
+      font-size: 14px;
+      top: 10px;
+      left: 10px;
+    }
+  }
+</style>
+
+
+ <div class="simple-slider" id="imageSlider">
+    <div class="slide-item"><img src="pack_icon.jpeg" alt="img 1"></div>
+    <div class="slide-item"><img src="img1.jpeg" alt="img 1"></div>
+    <div class="slide-item"><img src="img2.jpeg" alt="img 1"></div>
+    <div class="slide-item"><img src="img3.jpeg" alt="img 1"></div>
+</div>
+
+<!-- Navigation Buttons -->
+<div class="slider-nav">
+    <button class="nav-btn" onclick="scrollSlider(-300)">&#10094; Prev</button>
+    <button class="nav-btn" onclick="scrollSlider(300)">Next &#10095;</button>
+</div>
+<div style="font-family: Arial, sans-serif; line-height: 1.6; padding: 15px; background-color: #0b132b; color: #e0e7ff; border-radius: 10px;">
+
+  <h2 style="color: #3b82f6; margin-bottom: 5px;">
+    🚆 ICF Blue Coach
+  </h2>
+  
+  <p style="margin-top: 0; color: #93c5fd;">
+    <i>Owner: Creative-Playz</i>
+  </p>
+
+  <p>
+    Bring the classic <b>ICF Blue Coaches</b> of Indian Railways into Minecraft with this 
+    realistic and well-crafted addon. Designed with attention to detail, these coaches 
+    add authenticity to your train setups.
+  </p>
+
+  <h3 style="color: #3b82f6;">🔹 Features:</h3>
+  <ul style="padding-left: 20px;">
+    <li>Authentic <b>ICF blue coach design</b></li>
+    <li>Realistic detailing and textures</li>
+    <li>Smooth and optimized performance</li>
+    <li>Perfectly pairs with Indian locomotives (like WAP-7, WDP-4D)</li>
+    <li>Enhances overall railway experience</li>
+  </ul>
+
+  <p>
+    Build long passenger trains and recreate real Indian railway journeys with these 
+    iconic blue coaches in your Minecraft world.
+  </p>
+
+  <p style="color: #3b82f6; font-weight: bold;">
+    🚄 Built for realistic train gameplay
+  </p>
+
+</div>
+
+    <div class ="container">
+        
+    <a href="https://mcpedl.com/wap-7-locomotive/" class="download-btn">DOWNLOAD(MCPEDL)</a>
+    </div>
+    <!-- Simple Horizontal Slider -->
+
+
+
+
+
+</body>
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
+function scrollSlider(amount) {
+    const slider = document.getElementById('imageSlider');
+    slider.scrollBy({
+        left: amount,
+        behavior: 'smooth'
+    });
+}
+
+
+</script>
+
+</html>
