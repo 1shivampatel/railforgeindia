@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAILFORGE</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>WAG-9</h1>
+    </header>
+    <!-- The Sidebar -->
+<!-- home btn -->
+<a href="../../index.html" class="mc-home-btn">HOME</a>
+
+<style>
+  .mc-home-btn {
+    /* Position */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+
+    /* Minecraft Aesthetic */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(62, 175, 52, 0.5); /* Green with 50% transparency */
+    color: white;
+    text-decoration: none;
+    font-family: "Courier New", Courier, monospace; /* Blocky font vibe */
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+    
+    /* Border Styling */
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.2);
+    
+    /* Responsive adjustment */
+    font-size: 16px;
+    transition: all 0.2s;
+  }
+
+  .mc-home-btn:hover {
+    background-color: rgba(62, 175, 52, 0.8);
+    transform: scale(1.05);
+    border-color: white;
+  }
+
+  /* Adjusts for smaller screens (Mobile) */
+  @media (max-width: 600px) {
+    .mc-home-btn {
+      padding: 8px 15px;
+      font-size: 14px;
+      top: 10px;
+      left: 10px;
+    }
+  }
+</style>
+
+
+ <div class="simple-slider" id="imageSlider">
+    <div class="slide-item"><img src="pack_icon.jpg" alt="img 1"></div>
+    <div class="slide-item"><img src="img1.jpg" alt="img 1"></div>
+    <div class="slide-item"><img src="img2.jpg" alt="img 1"></div>
+    <div class="slide-item"><img src="img3.jpg" alt="img 1"></div>
+    
+    
+</div>
+
+<!-- Navigation Buttons -->
+<div class="slider-nav">
+    <button class="nav-btn" onclick="scrollSlider(-300)">&#10094; Prev</button>
+    <button class="nav-btn" onclick="scrollSlider(300)">Next &#10095;</button>
+</div>
+<h1>SOON</h1>
+
+
+    <div class ="container">
+        
+    <a href="#" class="download-btn">SOON</a>
+    </div>
+    <!-- Simple Horizontal Slider -->
+
+
+
+
+
+</body>
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
+function scrollSlider(amount) {
+    const slider = document.getElementById('imageSlider');
+    slider.scrollBy({
+        left: amount,
+        behavior: 'smooth'
+    });
+}
+
+
+</script>
+
+</html>
