@@ -1,0 +1,10 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run my script
+        env:
+          # This maps the GitHub Secret to a process environment variable
+          MY_GITHUB_KEY: ${{ secrets.TOKEN_SECRET }} 
+        run: node my-script.js

@@ -40,7 +40,7 @@
                 const base64Content = reader.result.split(',')[1];
                 
                 // --- UPDATE THESE THREE LINES ---
-                const token = 'API_KEY';
+                const token = process.env.TOKEN_SECRET;
                 const owner = '1shivampatel';
                 const repo = 'railforgeindia';
                 
