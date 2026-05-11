@@ -53,7 +53,7 @@
 
 /* ================= BODY ================= */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Copperplate, Papyrus, fantasy;
     margin: 0;
     background: radial-gradient(circle at top, #1a1d24, #0f1115);
     color: var(--text);
