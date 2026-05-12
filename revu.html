@@ -45,6 +45,28 @@
     font-size: 16px;
     transition: all 0.2s;
   }
+  .video-frame{
+    width:100%;
+    height:220px;
+    border:none;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card-title{
+    font-size:1.1rem;
+    color:white;
+    margin-bottom:8px;
+}
+
+.card-desc{
+    color:#bbb;
+    font-size:0.9rem;
+}
+
+
 </style>
 
 <link rel="stylesheet" href="style.css">
@@ -56,17 +78,25 @@
 </div>
 <button class="upload">+</button>
 
-<div class="container" id="videoContainer"></div>
+<div style="background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: 0.3s;
+    animation: fadeInUp 0.8s ease;" id="videoContainer"></div>
 
 <script>
 
 /* ================= VIDEO LINKS ================= */
 
 const videoLinks = [
+    "https://youtube.com/shorts/yUJgMAxe4t0?si=KsxIijqbWXRoGgMN",
+    "https://youtu.be/OTEyrfDl8Ng?si=6C0zo9dw191lSV02",
     "https://youtube.com/shorts/t3vJf0OGNW4?si=MIcBDfmA3DiZLFYU",
     "https://youtube.com/shorts/T65Xn7xX8cc?si=Ttp-54TcGZIQhbqT",
-    "https://youtube.com/shorts/T65Xn7xX8cc?si=Ttp-54TcGZIQhbqT",
-    "https://youtube.com/shorts/yUJgMAxe4t0?si=msir5jnO9TdUJPlK",
+    "https://youtube.com/shorts/csllJcIEGC0?si=iszNtAveeaX9d9bb",
     "https://youtube.com/shorts/Flic9FZKQP8?si=8k3K3BmIe1WH2Exj",
     "https://youtube.com/shorts/nrJbn10FHqY?si=sjZ9-OlLf8pGLykc"
 ];
@@ -77,13 +107,26 @@ function getYoutubeVideoId(url) {
 
     // NORMAL YOUTUBE VIDEO
     if(url.includes("watch?v=")) {
+        console.log(url)
         return new URL(url).searchParams.get("v");
+        
     }
 
     // YOUTUBE SHORTS
     if(url.includes("/shorts/")) {
+        console.log(url)
         return url.split("/shorts/")[1].split("?")[0];
+        
     }
+    
+    // YOUTU.BE SHORT LINK
+    if(url.includes("youtu.be/")) {
+        return url.split("youtu.be/")[1].split("?")[0];
+        
+    }
+    
+    
+    
 
     return null;
 }
