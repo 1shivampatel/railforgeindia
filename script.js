@@ -1,5 +1,5 @@
 // Configuration variables
-const ITEMS_TO_SHOW = 5; // Number of items to reveal per batch
+const ITEMS_TO_SHOW = 6; // Number of items to reveal per batch
 let currentDisplayedCount = ITEMS_TO_SHOW;
 
 // DOM Elements

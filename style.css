@@ -182,7 +182,7 @@ body {
 
 /* ================= CARD ================= */
 .card {
-    display: none;
+    /*display: none;*/
     background: var(--card);
     border-radius: 15px;
     overflow: hidden;
