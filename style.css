@@ -300,3 +300,18 @@ body {
     transform: scale(1.1);
     box-shadow: 0 0 15px rgba(0,255,150,0.6);
 }
+.recommend-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: orange; /* Vibrant orange color */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    z-index: 10; /* Keeps the tag on top of the image */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
