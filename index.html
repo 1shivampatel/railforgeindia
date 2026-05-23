@@ -1,201 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/x-icon" href="weblogo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RailForge India</title>
+
+  <link rel="icon" href="weblogo.png">
+
   <meta property="og:title" content="RailForge India">
   <meta property="og:description" content="Download realistic Indian train addons for Minecraft Bedrock.">
-<meta property="og:image" content="https://railforgeindia.netlify.app/weblogo.png">
-<meta property="og:url" content="https://railforgeindia.netlify.app">
-<meta property="og:type" content="website">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="weblogo.png">
-    <title>
-      RAILFORGE
-    </title>
-    <script type="application/ld+json">
-  {
-    "@context": "https://railforgeindia.netlify.app",
-    "@type": "WebSite",
-    "name": "RAILFORGE INDIA",
-    "alternateName": ["RFI", "R-F-I", "RAILFORGE", "railforgeindia"],
-    "url": "https://railforgeindia.netlify.app/"
-  }
-</script>
-    <link rel="stylesheet" href="style.css">
+  <meta property="og:image" content="https://railforgeindia.netlify.app/weblogo.png">
+  <meta property="og:url" content="https://railforgeindia.netlify.app">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style 1.css">
 </head>
+
 <body>
-
-    <header class="header">
-        <h1>RailForge India<br>(HOME)</h1>
-    </header>
-    <div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Home</a>
-  <a href="update.html">Update Log</a>
-  <a href="bugrepo.html">Bug Report</a>
-  <a href="about.html">About Us</a>
-</div>
-<button class="openbtn" onclick="openNav()">&#9776;</button>
-    <!-- The Sidebar -->
-<!-- home btn -->
-<table border="0px" width="100%">
-  <tr>
-<td><div style=""><a href="addon.html" class="download-btn">🔍 BROWSE ADDONS</a></div></td>
-<td><div><a href="world.html" class="download-btn">🔍 Browse world/maps</a></div></td>
-</tr>
-</table>
-<div><a href="revu.html" class="download-btn">📺 REVIEW / EDITS</a></div>
-<div><a href="#" class="download-btn">🛒 RAILFORGE-INDIA STORE (SOON)</a></div>
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px; width: 100%; margin-top: 12px; transition: 0.3s; animation: fadeInUp 1s ease;">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/railforge_india_official?igsh=a3V4cDBteHhqaDU2" target="_blank" style="text-decoration: none;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAfDHLEBApWX-CTjkTIzClXtIv-pFgjTbgHaKrqL-d-vjsHrqh78EW6r1w&s=10" alt="Instagram" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block;">
-    </a>
-
-    <!-- YouTube -->
-    <a href="https://youtube.com/@railforge_india?si=2CxcxqF70rTS0vfU" target="_blank" style="text-decoration: none;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjH5WQA4p_HK44fG8QSiwPT4Tg3GdBYcaqew&s" alt="YouTube" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block;">
-    </a>
-
-    <!-- Telegram -->
-    <a href="https://t.me/railforgeindia" target="_blank" style="text-decoration: none;">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5S47evgoZiX3itW3j5LD_Dn83jpxNBI8ao-y5PqLhbl5K41zUuCCGiWfE&s=10" alt="Telegram" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block;">
-    </a>
-</div>
-
-
-
-
-<style>
-  .mc-home-btn {
-    /* Position */
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-
-    /* Minecraft Aesthetic */
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: rgba(62, 175, 52, 0.5); /* Green with 50% transparency */
-    color: white;
-    text-decoration: none;
-    font-family: "Courier New", Courier, monospace; /* Blocky font vibe */
-    font-weight: bold;
-    text-shadow: 2px 2px #000;
-    
-    /* Border Styling */
-    border: 3px solid rgba(255, 255, 255, 0.5);
-    box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.2);
-    
-    /* Responsive adjustment */
-    font-size: 16px;
-    transition: all 0.2s;
-  }
-
-  .mc-home-btn:hover {
-    background-color: rgba(62, 175, 52, 0.8);
-    transform: scale(1.05);
-    border-color: white;
-  }
-
-  /* Adjusts for smaller screens (Mobile) */
-  @media (max-width: 600px) {
-    .mc-home-btn {
-      padding: 8px 15px;
-      font-size: 14px;
-      top: 10px;
-      left: 10px;
-    }
-  }
-</style>
-
-
-
-    <div style="font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background-color: #0f172a; color: #e2e8f0; border-radius: 0px;">
-
-  <h1 style="color: #38bdf8; margin-bottom: 5px; text-align: center;">
-    🚆 RAILFORGE INDIA
-  </h1>
-
-  <p style="text-align: center; color: #94a3b8; margin-top: 0;">
-    Building Realistic Indian Train Experiences in Minecraft
-  </p>
-  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
-  <h2 style="color: #38bdf8;">NEWS/UPDATES</h2>
-  -> Chenab Valley Minecraft Rail Route is released!!
-  -> Our official YouTube channel is here!! <a href="https://youtube.com/@railforge_india?si=ySStBe7FhIIOZurX" class="" style="color: white;">>YOUTUBE CHANNEL<</a> subscribe!!<br>
-  -> DEMU is released !!! <br>
-  -> old url/domain of our website is removed railforgeindia.vercel.app<br>
-  -> our new URL/DOMAIN is here <a href="railforgeindia.netlify.app" style="color:white;">railforgeindia.netlify.app</a>
-
   
+  <div class="parallax"></div>
 
-  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+<div id="loader">
+  <div class="logoGlow">RAILFORGE</div>
+  <div class="loaderBar"></div>
+</div>
 
-  <h2 style="color: #38bdf8;">About Us</h2>
-  <p>
-    <b>RAILFORGE INDIA</b> is a passionate team of creators dedicated to bringing 
-    realistic Indian railway content into Minecraft. We focus on creating high-quality 
-    locomotives, detailed interiors, and immersive train systems for players who love 
-    trains and creativity.
-  </p>
+<!-- SIDEBAR -->
+<div id="overlay" onclick="closeNav()"></div>
 
-  <p>
-    Our goal is to recreate the feel of Indian Railways with accuracy, performance, 
-    and fun gameplay. From powerful diesel engines to detailed cabins, every addon 
-    is crafted with attention to detail.
-  </p>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="index.html">🏠 Home</a>
+  <a href="update.html">📜 Update Log</a>
+  <a href="bugrepo.html">🐞 Bug Report</a>
+  <a href="about.html">ℹ️ About Us</a>
+</div>
 
-  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
+<button class="openbtn" onclick="openNav()">☰</button>
 
-  <h2 style="color: #38bdf8;">👥 Members</h2>
+<!-- HEADER -->
+<header class="header">
+  <div class="header-content">
+    <h1>RailForge India</h1>
+    <p>Building Realistic Indian Train Experiences in Minecraft</p>
+  </div>
+</header>
 
-  <ul style="padding-left: 20px;">
-    <li><b>Ryzek Gaming</b> – ADDON Creator & Developer</li>
-    <li><b>Lucifergamer253</b> – Route/Map creator</li>
-    <li><b>PowerCookie1547</b> – Route/Map creator</li>
-    <li><b>RyxPlayZ</b> – Route/Map creator</li>
-    <li><b>Creative playZ</b> – Addon creator</li>
-    <li><b>Dare empire</b> – Helper</li>
-    <li><b>SparkRails</b> – Helper</li>
-    <li><b>nitro editz(OP EXPRESS)</b> – Helper</li>
-    <li><b>Conexius</b> – Helper</li>
+<!-- MAIN BUTTONS -->
+<section class="grid">
+  <a href="addon.html" class="card-btn">🔍 Browse Addons</a>
+  <a href="world.html" class="card-btn">🌍 Browse Worlds</a>
+  <a href="revu.html" class="card-btn">📺 Reviews / Edits</a>
+  <a href="#" class="card-btn disabled">🛒 Store (Soon)</a>
+</section>
+
+<!-- SOCIAL -->
+<section class="social">
+  <a href="https://www.instagram.com/railforge_india_official?igsh=a3V4cDBteHhqaDU2" target="_blank">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAfDHLEBApWX-CTjkTIzClXtIv-pFgjTbgHaKrqL-d-vjsHrqh78EW6r1w&s=10">
+  </a>
+
+  <a href="https://youtube.com/@railforge_india?si=2CxcxqF70rTS0vfU" target="_blank">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjH5WQA4p_HK44fG8QSiwPT4Tg3GdBYcaqew&s">
+  </a>
+
+  <a href="https://t.me/railforgeindia" target="_blank">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5S47evgoZiX3itW3j5LD_Dn83jpxNBI8ao-y5PqLhbl5K41zUuCCGiWfE&s=10">
+  </a>
+</section>
+
+<!-- CONTENT -->
+<section class="content-box">
+
+  <h2>NEWS / UPDATES</h2>
+  <ul>
+    <li>Chenab Valley Minecraft Rail Route released!</li>
+    <li>Official YouTube channel launched</li>
+    <li>DEMU addon released</li>
+    <li>New domain active: railforgeindia.netlify.app</li>
   </ul>
 
-  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
-
-  <p style="text-align: center; color: #38bdf8; font-weight: bold;">
-    🚄 Crafted with passion for train lovers across India
+  <h2>About Us</h2>
+  <p>
+    RailForge India creates realistic Indian railway experiences in Minecraft with detailed trains, routes, and immersive gameplay.
   </p>
-  <hr style="border: 1px solid #1e293b; margin: 20px 0;">
 
-  <p style="text-align: center; color: #38bdf8; font-weight: bold;">
-    📷 YOUTUBE LINKS
-    <a href="https://youtube.com/@ryzekgaming?si=H9eIpEcS3veHLgh4" class="download-btn">RYZEK GAMING</a>
-    
-    <a href="https://youtube.com/@pixel_nomad11?si=z6wVTbRXv9ZNv6Hm" class="download-btn">Lucifergamer253</a>
-    <a href="https://youtube.com/@xx1harshit_1?si=G3Aet-XNlOYwCPFD" class="download-btn">RyxPlayZ</a>
-    <a href="https://youtube.com/@creativeplayz11?si=CY5_G4vOCeCLQQWl" class="download-btn">Creative PlayZ</a>
-    <a href="https://youtube.com/@nitroeditz5?si=2G-_mtdjMBe_tY0r" class="download-btn">OP EXPRESS</a>
-    <hr style="border: 1px solid #1e293b; margin: 20px 0;">
-    
-  </p>
-  
-  
+  <h2>Members</h2>
+  <ul>
+    <li>Ryzek Gaming – Developer</li>
+    <li>Lucifergamer253 – Map Creator</li>
+    <li>PowerCookie1547 – Map Creator</li>
+    <li>RyxPlayZ – Map Creator</li>
+    <li>Creative PlayZ – Addons</li>
+  </ul>
 
-</div>
+  <p class="footer-text">🚄 Crafted for train lovers across India</p>
 
-</body>
+</section>
+
 <script>
 function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("mySidebar").style.width = "260px";
 }
-
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
 </script>
 
+<script src="main.js"></script>
+
+<canvas id="trainCanvas"></canvas>
+
+</body>
 </html>
