@@ -1,219 +1,428 @@
-
-/* ================= ROOT ================= */
 :root {
-    --primary: #00c853;
-    --secondary: #00e5ff;
-    --dark: #0f1115;
-    --card: rgba(255, 255, 255, 0.05);
-    --glass: rgba(255,255,255,0.08);
-    --text: #e0e0e0;
+  --bg1: #050814;
+  --bg2: #0a1630;
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass2: rgba(255, 255, 255, 0.1);
+  --text: #e6edf3;
+
+  --blue: #00c6ff;
+  --purple: #7c4dff;
 }
 
-@font-face {
-  font-family: 'MyCustomFont';
-  src: url('fonts/myfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-
-/* ================= GLOBAL ANIMATIONS ================= */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes slideInLeft {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
-}
-
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 rgba(0,255,150,0); }
-    50% { box-shadow: 0 0 20px rgba(0,255,150,0.6); }
-    100% { box-shadow: 0 0 0 rgba(0,255,150,0); }
-}
-
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0); }
-}
-
-/* ================= BODY ================= */
+/* 🌌 ANIMATED GRADIENT BACKGROUND */
 body {
-    font-family: Copperplate, Papyrus, fantasy;
-    margin: 0;
-    background: radial-gradient(circle at top, #1a1d24, #0f1115);
-    color: var(--text);
-    animation: fadeIn 0.8s ease;
+  margin: 0;
+  font-family: Copperplate, Papyrus, fantasy;
+  color: var(--text);
+  background: linear-gradient(-45deg, #050814, #0a1630, #0b1b3a, #050814);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
 }
 
-/* ================= HEADER ================= */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🚆 HEADER WITH TRAIN EFFECT */
 .header {
-    height: 300px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-                url('logo.png') no-repeat center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-    animation: fadeIn 1s ease;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* moving train line */
+.header::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  bottom: 40px;
+  animation: trainLine 3s linear infinite;
+}
+
+@keyframes trainLine {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(50%); }
+}
+
+/* train emoji animation */
+.header::after {
+  content: "🚆";
+  position: absolute;
+  bottom: 25px;
+  left: -50px;
+  font-size: 28px;
+  animation: trainMove 4s linear infinite;
+}
+
+@keyframes trainMove {
+  0% { left: -50px; }
+  100% { left: 110%; }
 }
 
 .header h1 {
-    font-size: 2rem;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 20px rgba(0,255,150,0.4);
-    text-align: center;
-    margin: 0;
-    animation: zoomIn 1s ease;
+  font-size: 42px;
+  margin: 0;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* ================= SIDEBAR ================= */
+/* 📱 GRID (mobile app style cards) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+/* ✨ GLASS BUTTONS */
+.card-btn {
+  display: block;
+  padding: 14px;
+  text-align: center;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(12px);
+  transition: 0.3s;
+
+  box-shadow: 0 0 0 transparent;
+}
+
+/* glowing launcher effect */
+.card-btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.6);
+  background: linear-gradient(135deg, rgba(0,198,255,0.2), rgba(124,77,255,0.2));
+}
+
+/* disabled button */
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* 🌐 SOCIAL */
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.social img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.social img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(0,198,255,0.5);
+}
+
+/* 🧊 GLASS CONTENT PANEL */
+.content-box {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+
+  backdrop-filter: blur(15px);
+}
+
+h2 {
+  color: var(--blue);
+}
+
+/* SIDEBAR */
 .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    background: rgba(10,10,10,0.95);
-    backdrop-filter: blur(12px);
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-    border-right: 1px solid rgba(255,255,255,0.1);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  overflow-x: hidden;
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  padding-top: 60px;
 }
 
 .sidebar a {
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #aaa;
-    display: block;
-    transition: 0.2s;
-    border-left: 3px solid transparent;
+  display: block;
+  padding: 15px;
+  color: #aaa;
+  text-decoration: none;
 }
 
 .sidebar a:hover {
-    color: white;
-    background: rgba(0,255,150,0.1);
-    border-left: 3px solid var(--primary);
+  color: white;
+  background: rgba(0,198,255,0.15);
 }
 
-.sidebar .closebtn {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 36px;
-    color: white;
-}
-
-/* ================= MENU BUTTON ================= */
+/* MENU BUTTON */
 .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    color: white;
-    padding: 10px 15px;
-    border: 1px solid rgba(255,255,255,0.2);
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 999;
-    border-radius: 8px;
-    transition: 0.3s;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
 }
 
-.openbtn:hover {
-    background: rgba(255,255,255,0.2);
+/* ================= LOADER ================= */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #050814, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-/* ================= SEARCH ================= */
-.search-container {
-    max-width: 220px;
-    margin: 20px;
+.logoGlow {
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00c6ff, #7c4dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulseGlow 1.5s infinite;
 }
 
-#searchInput {
-    width: 100%;
-    padding: 12px;
-    background: var(--glass);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    animation: fadeInUp 1s ease;
+.loaderBar {
+  width: 180px;
+  height: 4px;
+  margin-top: 20px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-#searchInput::placeholder {
-    color: #aaa;
+.loaderBar::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, #00c6ff, #7c4dff);
+  animation: loadMove 1s infinite;
 }
 
-#searchInput:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 10px rgba(0,255,150,0.4);
+@keyframes loadMove {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
 }
 
-/* ================= GRID ================= */
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+/* ================= PAGE FADE ================= */
+body {
+  animation: pageFade 0.6s ease;
 }
 
-/* ================= CARD ================= */
+@keyframes pageFade {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ================= SIDEBAR FIX ================= */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 998;
+}
+
+.sidebar {
+  width: 260px;
+  transform: translateX(-100%);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.openbtn {
+  z-index: 1000;
+}
+
+.parallax {
+  position: fixed;
+  inset: 0;
+  background: url('logo.gif');
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+  transform: translateZ(0);
+}
+#trainCanvas {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .card {
-    /*display: none;*/
-    background: var(--card);
-    border-radius: 15px;
-    overflow: hidden;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: 0.3s;
-    animation: fadeInUp 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
-    animation: pulseGlow 1s infinite;
+  transform: translateY(-6px);
 }
 
-/* IMAGE */
-.card-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    filter: brightness(0.9);
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-/* CONTENT */
-.card-content {
-    padding: 15px;
+.card h2 {
+  font-size: 18px;
+  margin: 8px 0;
 }
 
+.card p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.download-btn {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  
+  background: linear-gradient(135deg, #00c6ff, #7c4dff);
+  color: black;
+  
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 15px;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  overflow-x: hidden;
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
+.container {
+  margin: 40px auto !important;
+  padding: 20px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(10px);
+  
+  transition: 0.3s ease;
+  z-index: 999;
+}
+.openbtn {
+  z-index: 1001;
+}
+.container {
+  gap: 20px;
+}
+
+.search-container {
+  max-width: 220px;
+  margin: 20px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 12px;
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 1s ease;
+}
+
+#searchInput::placeholder {
+  color: #aaa;
+}
+
+#searchInput:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(0, 255, 150, 0.4);
+}
 .card-title {
     font-size: 1.2rem;
     color: white;
+    
+}
+
+.card-content {
+  padding: 15px;
 }
 
 .card-desc {
@@ -221,26 +430,6 @@ body {
     color: #bbb;
 }
 
-/* BUTTON */
-.download-btn {
-    display: block;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    color: black;
-    text-align: center;
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 15px;
-    font-weight: bold;
-    transition: 0.3s;
-    animation: fadeInUp 1s ease;
-}
-
-.download-btn:hover {
-    box-shadow: 0 0 15px rgba(0,255,150,0.6);
-    transform: scale(1.05);
-}
-
-/* ================= SLIDER ================= */
 .simple-slider {
     display: flex;
     overflow-x: auto;
@@ -287,7 +476,7 @@ body {
 }
 
 .nav-btn {
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    background: linear-gradient(90deg, var(--blue), var(--purple));
     color: black;
     border: none;
     padding: 10px 20px;

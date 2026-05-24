@@ -7,13 +7,19 @@
     <title>RAILFORGE</title>
 
     
-    <link rel="stylesheet" href="style 1.css">
+    <link rel="stylesheet" href="style.css">
     <style>
 
     </style>
 </head>
 
 <body>
+    <div class="parallax"></div>
+
+<div id="loader">
+  <div class="logoGlow">RAILFORGE-INDIA<br>ADDONS</div>
+  <div class="loaderBar"></div>
+</div>
 
 <header class="header">
     <h1>RailForge India<br>(Addons)</h1>
@@ -52,7 +58,7 @@
         </div>
     </div>
     <div class="card">
-        <span class="recommend-tag">RECOMMENDED</span> 
+         
         <img src="files/demu/pack_icon.jpg" class="card-image">
         <div class="card-content">
             <h2 class="card-title">DEMU TRAINSET</h2>
@@ -153,6 +159,10 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
 </script>
+
+<script src="main.js"></script>
+
+<canvas id="trainCanvas"></canvas>
 
 </body>
 </html>
