@@ -16,15 +16,17 @@
     <h1>RailForge India<br>(Worlds)</h1>
 </header>
 
+<div id="overlay" onclick="closeNav()"></div>
+
 <div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="index.html">Home</a>
-  <a href="update.html">Update Log</a>
-  <a href="bugrepo.html">Bug Report</a>
-  <a href="about.html">About Us</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="index.html">🏠 Home</a>
+  <a href="update.html">📜 Update Log</a>
+  <a href="bugrepo.html">🐞 Bug Report</a>
+  <a href="about.html">ℹ️ About Us</a>
 </div>
 
-<button class="openbtn" onclick="openNav()">&#9776;</button>
+<button class="openbtn" onclick="openNav()">☰</button>
 
 <div class="search-container">
     <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Search for stuffs ...">
