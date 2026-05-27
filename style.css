@@ -267,15 +267,6 @@ h2 {
   transform: translateZ(0);
 }
 
-#trainCanvas {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 120px;
-  z-index: 1;
-  pointer-events: none;
-}
-
 /* CARDS */
 .card {
   display: flex;

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>RailForge India</title>
+  <title>RailForge India | Minecraft train addons</title>
 
   <link rel="icon" href="weblogo.png">
 
@@ -18,6 +18,8 @@
 </head>
 
 <body>
+  
+  
   
   <div class="parallax"></div>
 
@@ -46,6 +48,55 @@
     <p>Building Realistic Indian Train Experiences in Minecraft</p>
   </div>
 </header>
+
+<div style="width: 100%; max-width: 90%; margin: 0 auto; overflow: hidden; position: relative;">
+    
+    <div class="simple-slider" id="sliderWindow" style="overflow: hidden; display: flex; padding: 0; gap: 0; cursor: grab;">
+      <div id="sliderTrack" style="display: flex; width: 100%; height: 100%; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); pointer-events: none;">
+          
+        <!-- Slide Item 1 -->
+        <div class="slide-item" style="flex: 0 0 100%; border-radius: 15px; overflow: hidden; position: relative;">
+          <img src="files/rasdugrou/pack_icon.jpg" alt="Dragons" style="width: 100%;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 40%, transparent 80%); z-index: 1;"></div>
+          <div style="position: absolute; bottom: 8%; left: 5%; z-index: 2; right: 5%;">
+            <h1 style="font-size: clamp(1.5rem, 4vw, 2.5rem); margin: 0; text-transform: uppercase; color: var(--text); text-shadow: 0 0 15px rgba(0, 198, 255, 0.5); font-family: sans-serif;">Chenab Valley Minecraft Rail Route</h1>
+          </div>
+        </div>
+
+        <!-- Slide Item 2 -->
+        <div class="slide-item" style="flex: 0 0 100%; border-radius: 15px; overflow: hidden; position: relative;">
+          <img src="files/demu/pack_icon.jpg" alt="Citadel" style="width: 100%;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 40%, transparent 80%); z-index: 1;"></div>
+          <div style="position: absolute; bottom: 8%; left: 5%; z-index: 2; right: 5%;">
+            <h1 style="font-size: clamp(1.5rem, 4vw, 2.5rem); margin: 0; text-transform: uppercase; color: var(--text); text-shadow: 0 0 15px rgba(0, 198, 255, 0.5); font-family: sans-serif;">DEMU</h1>
+          </div>
+        </div>
+
+        <!-- Slide Item 3 -->
+        <div class="slide-item" style="flex: 0 0 100%; border-radius: 15px; overflow: hidden; position: relative;">
+          <img src="files/vb/pack_icon.jpg" alt="Armory" style="width: 100%;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 40%, transparent 80%); z-index: 1;"></div>
+          <div style="position: absolute; bottom: 8%; left: 5%; z-index: 2; right: 5%;">
+            <h1 style="font-size: clamp(1.5rem, 4vw, 2.5rem); margin: 0; text-transform: uppercase; color: var(--text); text-shadow: 0 0 15px rgba(0, 198, 255, 0.5); font-family: sans-serif;">Vande Bharat || COMMING SOON</h1>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 2. NAVIGATION OVERLAY (Box Indicators and Arrows Layout) -->
+  <div class="slider-nav">
+    <button class="nav-btn" onclick="moveSlide(-1)">&lt;</button>
+    
+    <!-- Proportional Navigation Block Indicator Nodes -->
+    <span class="dot-indicator" onclick="jumpToSlide(0)" style="width: 12px; height: 12px; border: 2px solid var(--purple); border-radius: 3px; cursor: pointer; transition: 0.2s; display: inline-block;"></span>
+    <span class="dot-indicator" onclick="jumpToSlide(1)" style="width: 12px; height: 12px; border: 2px solid var(--purple); border-radius: 3px; cursor: pointer; transition: 0.2s; display: inline-block;"></span>
+    <span class="dot-indicator" onclick="jumpToSlide(2)" style="width: 12px; height: 12px; border: 2px solid var(--purple); border-radius: 3px; cursor: pointer; transition: 0.2s; display: inline-block;"></span>
+    
+    <button class="nav-btn" onclick="moveSlide(1)">&gt;</button>
+  </div>
 
 <!-- MAIN BUTTONS -->
 <section class="grid">
@@ -94,9 +145,10 @@ function closeNav() {
 }
 </script>
 
+
+
+<marquee behavior="" direction="right" class="header-content"><h1>RailForge India ||
+    Building Realistic Indian Train Experiences in Minecraft</h1></marquee>
 <script src="main.js"></script>
-
-<canvas id="trainCanvas"></canvas>
-
 </body>
 </html>
