@@ -9,20 +9,27 @@
   --purple: #7c4dff;
 }
 
-/* 🌌 ANIMATED GRADIENT BACKGROUND */
+/* 🌌 ANIMATED GRADIENT BACKGROUND & INITIALIZATION */
 body {
   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   font-family: Copperplate, Papyrus, fantasy;
   color: var(--text);
   background: linear-gradient(-45deg, #050814, #0a1630, #0b1b3a, #050814);
   background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
+  animation: gradientMove 12s ease infinite, pageFade 0.6s ease;
 }
 
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes pageFade {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 /* 🚆 HEADER WITH TRAIN EFFECT */
@@ -34,7 +41,6 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-
   background: rgba(0,0,0,0.3);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -96,13 +102,10 @@ body {
   text-decoration: none;
   font-weight: bold;
   color: white;
-
   background: var(--glass);
   border: 1px solid rgba(255,255,255,0.1);
-
   backdrop-filter: blur(12px);
   transition: 0.3s;
-
   box-shadow: 0 0 0 transparent;
 }
 
@@ -145,11 +148,9 @@ body {
   max-width: 900px;
   margin: 20px auto;
   padding: 20px;
-
   background: var(--glass);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 16px;
-
   backdrop-filter: blur(15px);
 }
 
@@ -157,18 +158,24 @@ h2 {
   color: var(--blue);
 }
 
-/* SIDEBAR */
+/* 🔄 COMBINED SIDEBAR */
 .sidebar {
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
-  width: 0;
+  width: 250px;
   overflow-x: hidden;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.92);
   backdrop-filter: blur(10px);
-  transition: 0.3s;
   padding-top: 60px;
+  transform: translateX(-100%);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar.active {
+  transform: translateX(0);
 }
 
 .sidebar a {
@@ -191,10 +198,10 @@ h2 {
   padding: 10px 14px;
   border-radius: 10px;
   cursor: pointer;
-
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.1);
   color: white;
+  z-index: 1001;
 }
 
 /* ================= LOADER ================= */
@@ -241,16 +248,6 @@ h2 {
   100% { transform: translateX(250%); }
 }
 
-/* ================= PAGE FADE ================= */
-body {
-  animation: pageFade 0.6s ease;
-}
-
-@keyframes pageFade {
-  from { opacity: 0; transform: scale(1.02); }
-  to { opacity: 1; transform: scale(1); }
-}
-
 /* ================= SIDEBAR FIX ================= */
 #overlay {
   position: fixed;
@@ -258,21 +255,6 @@ body {
   background: rgba(0,0,0,0.5);
   display: none;
   z-index: 998;
-}
-
-.sidebar {
-  width: 260px;
-  transform: translateX(-100%);
-  transition: 0.3s ease;
-  z-index: 999;
-}
-
-.sidebar.active {
-  transform: translateX(0);
-}
-
-.openbtn {
-  z-index: 1000;
 }
 
 .parallax {
@@ -284,6 +266,7 @@ body {
   z-index: -1;
   transform: translateZ(0);
 }
+
 #trainCanvas {
   position: fixed;
   bottom: 0;
@@ -293,6 +276,7 @@ body {
   pointer-events: none;
 }
 
+/* CARDS */
 .card {
   display: flex;
   flex-direction: column;
@@ -305,7 +289,7 @@ body {
 
 .card:hover {
   transform: translateY(-6px);
-  border-color: var(--blue)
+  border-color: var(--blue);
 }
 
 .card img {
@@ -333,10 +317,8 @@ body {
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
-  
   background: linear-gradient(135deg, #00c6ff, #7c4dff);
   color: black;
-  
   transition: 0.3s;
 }
 
@@ -344,54 +326,16 @@ body {
   transform: scale(1.05);
 }
 
+/* 📦 COMBINED CONTAINER */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  padding: 15px;
-}
-
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 0;
-  overflow-x: hidden;
-  transition: 0.3s;
-  background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
-}
-.container {
   margin: 40px auto !important;
   padding: 20px;
 }
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 250px;
-  
-  overflow-x: hidden;
-  background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(10px);
-  
-  transition: 0.3s ease;
-  z-index: 999;
-}
-.openbtn {
-  z-index: 1001;
-}
-.container {
-  gap: 20px;
-}
 
+/* SEARCH FIELD */
 .search-container {
   max-width: 220px;
   margin: 20px;
@@ -416,10 +360,10 @@ body {
   border-color: var(--primary);
   box-shadow: 0 0 10px rgba(0, 255, 150, 0.4);
 }
+
 .card-title {
-    font-size: 1.2rem;
-    color: white;
-    
+  font-size: 1.2rem;
+  color: white;
 }
 
 .card-content {
@@ -427,103 +371,103 @@ body {
 }
 
 .card-desc {
-    font-size: 0.9rem;
-    color: #bbb;
+  font-size: 0.9rem;
+  color: #bbb;
 }
 
+/* SLIDER COMPONENTS */
 .simple-slider {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 20px;
-    padding: 20px;
-    scrollbar-width: none;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px;
+  scrollbar-width: none;
 }
 
 .simple-slider::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .slide-item {
-    flex: 0 0 80%;
-    scroll-snap-align: center;
-    border-radius: 15px;
-    overflow: hidden;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    transition: 0.3s;
-    animation: zoomIn 0.6s ease;
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: 0.3s;
+  animation: zoomIn 0.6s ease;
 }
-
-
 
 .slide-item img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
 }
 
-/* NAV */
-/*nav*/
 .slider-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .nav-btn {
-    background: linear-gradient(90deg, var(--blue), var(--purple));
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.3s;
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .nav-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0,255,150,0.6);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0,255,150,0.6);
 }
-.recommend-tag {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background-color: orange; /* Vibrant orange color */
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 6px 12px;
-    border-radius: 4px;
-    z-index: 10; /* Keeps the tag on top of the image */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-.addon-tag {
-     position: overlay;
-     top: 4%;
-     right: 4%;
-     padding: 2% 5%;
-     font-size: 75%;
-     font-weight: 700;
-     text-transform: uppercase;
-     letter-spacing: 1px;
-     border-radius: 50px;
-     z-index: 3;
-     background: rgba(255, 226, 89, 0.15);
-     color: #ffe259;
-     border: 1px solid rgba(255, 226, 89, 0.3);
-     }
 
-        .addon-tag.exclusive {
-            background: rgba(255, 107, 107, 0.15);
-            color: #ff6b6b;
-            border: 1px solid rgba(255, 107, 107, 0.3);
-        }
+/* BADGES & TAGS */
+.recommend-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: orange;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/*.addon-tag {
+  position: absolute; /* Fixed broken property syntax here */
+/*  top: 4%;
+  right: 4%;
+  padding: 2% 5%;
+  font-size: 75%;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  z-index: 3;
+  background: rgba(255, 226, 89, 0.15);
+  color: #ffe259;
+  border: 1px solid rgba(255, 226, 89, 0.3);
+}
+
+.addon-tag.exclusive {
+  background: rgba(255, 107, 107, 0.15);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
