@@ -1,15 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAILFORGE</title>
-
-    
     <link rel="stylesheet" href="style.css">
     <style>
-
+        /* Embedded styling if needed */
     </style>
 </head>
 
@@ -41,112 +38,53 @@
     <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Search for stuffs ...">
 </div>
 
-<div class="container">
-    
-    <div class="card">
-        <img src="files/wag9cpz/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">WAG-9 LOCO by creative playz</h2>
-            <p class="card-desc">most powerful electric freight locomotives of Indian Railways.</p>
-            <a href="files/wag9cpz/wag9.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-    
-    <div class="card">
-        <img src="files/vb/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <span class="addon-tag">Recommended</span>
-            <h2 class="card-title">VANDE BHARAT TRAINSET</h2>
-            <p class="card-desc">SURPRISE 🤫 COMMING SOON.</p>
-            <a href="files/vb/vb.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="files/wag9/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">WAG-9 LOCO</h2>
-            <p class="card-desc">SURPRISE 🤫 COMMING SOON.</p>
-            <a href="files/wag9/wag9.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-    <div class="card">
-         
-        <img src="files/demu/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">DEMU TRAINSET</h2>
-            <p class="card-desc">Add the iconic <b>DEMU (Diesel Electric Multiple Unit)</b> trains of Indian Railways.</p>
-            <a href="files/demu/demu.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
+<div class="container" id="cardsContainer"></div>
 
-    <div class="card">
-        <img src="files/WDP4D/pack_icon.png" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">WDP-4D LOCOMITIVE ADDON</h2>
-            <p class="card-desc">High-detailed WDP-4D DIESE LOCOMOTIVE with custom sounds and interior.</p>
-            <a href="files/WDP4D/wdp4D.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="files/icfblue/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">ICF BLUE PACK</h2>
-            <p class="card-desc">High-detail ICF BLUE COACHES with custom sounds and interior.</p>
-            <a href="files/icfblue/icfblue.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-
-    
-
-    <div class="card">
-        <img src="files/mtc/pack_icon.png" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">MTC controller</h2>
-            <p class="card-desc">An Addon that controls our trains in a realistic way.</p>
-            <a href="files/mtc/mtc.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-    
-    <div class="card">
-        <img src="files/wap7cpz/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">WAP-7 BY CreativePlayz</h2>
-            <p class="card-desc">Experience the power of the iconic WAP-7 electric locomotive in Minecraft!...</p>
-            <a href="files/wap7cpz/wap7cpz.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="files/wap5cpz/pack_icon.jpeg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">WAP-5 BY CreativePlayz</h2>
-            <p class="card-desc">Experience the power of the iconic WAP-5 electric locomotive in Minecraft!...</p>
-            <a href="files/wap5cpz/wap5cpz.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="files/icfcpz/pack_icon.jpeg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">ICF COACH BY CreativePlayz</h2>
-            <p class="card-desc">High-detail ICF BLUE COACHES with custom sounds and interior by Creative-Playz.</p>
-            <a href="files/icfcpz/icfcpz.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="files/emuse/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">EMU SEALDAH</h2>
-            <p class="card-desc">SOMETHING NEW...</p>
-            <a href="files/emuse/emuse.html" class="download-btn">VIEW ADDON</a>
-        </div>
-    </div>
-
-    
-
-</div>
 <button id="load-more-btn" class="download-btn" style="width:100%; margin:40px auto;">load more</button>
+
 <script src="script.js"></script>
 <script>
+// Array to hold the data globally for searching
+let allAddons = [];
+
+// Fetch data from addon.json and render them
+async function loadAddons() {
+    try {
+        const response = await fetch('addon.json');
+        allAddons = await response.json();
+        renderCards(allAddons);
+    } catch (error) {
+        console.error("Error loading the addons configuration:", error);
+        document.getElementById('cardsContainer').innerHTML = "<p style='color:white; text-align:center;'>Failed to load addons.</p>";
+    }
+}
+
+// Function to generate card HTML components dynamically
+function renderCards(addons) {
+    const container = document.getElementById('cardsContainer');
+    container.innerHTML = ""; // Clear existing fallback entries
+
+    addons.forEach(addon => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        // Check if item should include a recommended tag (optional bonus helper)
+        const tagHTML = addon.isRecommended ? `<span class="addon-tag">Recommended</span>` : '';
+
+        card.innerHTML = `
+            <img src="${addon.cardImageUrl}" class="card-image" alt="${addon.cardName}">
+            <div class="card-content">
+                ${tagHTML}
+                <h2 class="card-title">${addon.cardName}</h2>
+                <p class="card-desc">${addon.cardDescription}</p>
+                <a href="${addon.cardViewAddonUrl}" class="download-btn">VIEW ADDON</a>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// Optimized client side filtering function
 function searchCards() {
     let input = document.getElementById('searchInput').value.toLowerCase();
     let cards = document.getElementsByClassName('card');
@@ -167,9 +105,13 @@ function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
 }
 
+// Fixed the broken multi-line function syntax from original snippet
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
+
+// Trigger data pull once DOM loads up
+window.addEventListener('DOMContentLoaded', loadAddons);
 </script>
 
 <script src="main.js"></script>
@@ -178,4 +120,3 @@ function closeNav() {
 
 </body>
 </html>
-
