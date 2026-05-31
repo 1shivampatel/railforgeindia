@@ -1,0 +1,70 @@
+[
+  {
+    "cardName": "WAG-9 LOCO by creative playz",
+    "cardImageUrl": "files/wag9cpz/pack_icon.jpg",
+    "cardViewAddonUrl": "files/wag9cpz/wag9.html",
+    "cardDescription": "most powerful electric freight locomotives of Indian Railways."
+  },
+  {
+    "cardName": "VANDE BHARAT TRAINSET",
+    "cardImageUrl": "files/vb/pack_icon.jpg",
+    "cardViewAddonUrl": "files/vb/vb.html",
+    "cardDescription": "SURPRISE 🤫 COMMING SOON.",
+    "isRecommended": true
+  },
+  {
+    "cardName": "WAG-9 LOCO",
+    "cardImageUrl": "files/wag9/pack_icon.jpg",
+    "cardViewAddonUrl": "files/wag9/wag9.html",
+    "cardDescription": "SURPRISE 🤫 COMMING SOON."
+  },
+  {
+    "cardName": "DEMU TRAINSET",
+    "cardImageUrl": "files/demu/pack_icon.jpg",
+    "cardViewAddonUrl": "files/demu/demu.html",
+    "cardDescription": "Add the iconic <b>DEMU (Diesel Electric Multiple Unit)</b> trains of Indian Railways."
+  },
+  {
+    "cardName": "WDP-4D LOCOMITIVE ADDON",
+    "cardImageUrl": "files/WDP4D/pack_icon.png",
+    "cardViewAddonUrl": "files/WDP4D/wdp4D.html",
+    "cardDescription": "High-detailed WDP-4D DIESE LOCOMOTIVE with custom sounds and interior."
+  },
+  {
+    "cardName": "ICF BLUE PACK",
+    "cardImageUrl": "files/icfblue/pack_icon.jpg",
+    "cardViewAddonUrl": "files/icfblue/icfblue.html",
+    "cardDescription": "High-detail ICF BLUE COACHES with custom sounds and interior."
+  },
+  {
+    "cardName": "MTC controller",
+    "cardImageUrl": "files/mtc/pack_icon.png",
+    "cardViewAddonUrl": "files/mtc/mtc.html",
+    "cardDescription": "An Addon that controls our trains in a realistic way."
+  },
+  {
+    "cardName": "WAP-7 BY CreativePlayz",
+    "cardImageUrl": "files/wap7cpz/pack_icon.jpg",
+    "cardViewAddonUrl": "files/wap7cpz/wap7cpz.html",
+    "cardDescription": "Experience the power of the iconic WAP-7 electric locomotive in Minecraft!..."
+  },
+  {
+    "cardName": "WAP-5 BY CreativePlayz",
+    "cardImageUrl": "files/wap5cpz/pack_icon.jpeg",
+    "cardViewAddonUrl": "files/wap5cpz/wap5cpz.html",
+    "cardDescription": "Experience the power of the iconic WAP-5 electric locomotive in Minecraft!..."
+  },
+  {
+    "cardName": "ICF COACH BY CreativePlayz",
+    "cardImageUrl": "files/icfcpz/pack_icon.jpeg",
+    "cardViewAddonUrl": "files/icfcpz/icfcpz.html",
+    "cardDescription": "High-detail ICF BLUE COACHES with custom sounds and interior by Creative-Playz."
+  },
+  {
+    "cardName": "EMU SEALDAH",
+    "cardImageUrl": "files/emuse/pack_icon.jpg",
+    "cardViewAddonUrl": "files/emuse/emuse.html",
+    "cardDescription": "SOMETHING NEW..."
+  }
+  
+]
