@@ -1,0 +1,20 @@
+[
+  {
+    "cardName": "PAMBAN OCEANIC ROUTE",
+    "cardImageUrl": "files/ramsrou/pack_icon.jpg",
+    "cardViewAddonUrl": "files/ramsrou/ramsrou.html",
+    "cardDescription": "High-detail Route with 3 stations."
+  },
+  {
+    "cardName": "Chenab Valley Minecraft Rail Route",
+    "cardImageUrl": "files/rasdugrou/pack_icon.jpg",
+    "cardViewAddonUrl": "files/rasdugrou/rasdugrou.html",
+    "cardDescription": "Experience one of the most breathtaking railway stretches, now built in Minecraft."
+  },
+  {
+    "cardName": "EASTERN RAILWAY WORLD",
+    "cardImageUrl": "files/esrarou/pack_icon.jpg",
+    "cardViewAddonUrl": "files/esrarou/esrarou.html",
+    "cardDescription": "🤫 SURPRISE 🤫."
+  }
+]
