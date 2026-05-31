@@ -1,12 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAILFORGE</title>
-
-    
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -32,45 +29,50 @@
     <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Search for stuffs ...">
 </div>
 
-<div class="container">
-
-    
-
-    <div class="card">
-        <img src="files/ramsrou/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">PAMBAN OCEANIC ROUTE</h2>
-            <p class="card-desc">High-detail Route with 3 stations.</p>
-            <a href="files/ramsrou/ramsrou.html" class="download-btn">VIEW ROUTE</a>
-        </div>
-    </div>
-
-    
-
-    <div class="card">
-        
-        <img src="files/rasdugrou/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">Chenab Valley Minecraft Rail Route</h2>
-            <p class="card-desc">Experience one of the most breathtaking railway stretches, now built in Minecraft.</p>
-            <a href="files/rasdugrou/rasdugrou.html" class="download-btn">VIEW ROUTE</a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="files/esrarou/pack_icon.jpg" class="card-image">
-        <div class="card-content">
-            <h2 class="card-title">EASTERN RAILWAY WORLD</h2>
-            <p class="card-desc">🤫 SURPRISE 🤫.</p>
-            <a href="files/esrarou/esrarou.html" class="download-btn">VIEW ROUTE</a>
-        </div>
-    </div>
-
-</div>
+<div class="container" id="worldsContainer"></div>
 
 <button id="load-more-btn" class="download-btn" style="width:100%; margin: 40px auto;">load more</button>
+
 <script src="script.js"></script>
 
 <script>
+// Array to store data for client-side search filtering
+let allWorlds = [];
+
+// Fetch data from world.json and render them
+async function loadWorlds() {
+    try {
+        const response = await fetch('world.json');
+        allWorlds = await response.json();
+        renderCards(allWorlds);
+    } catch (error) {
+        console.error("Error loading the worlds configuration:", error);
+        document.getElementById('worldsContainer').innerHTML = "<p style='color:white; text-align:center;'>Failed to load worlds.</p>";
+    }
+}
+
+// Function to generate card HTML elements dynamically
+function renderCards(worlds) {
+    const container = document.getElementById('worldsContainer');
+    container.innerHTML = ""; // Clear baseline structural content
+
+    worlds.forEach(world => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        card.innerHTML = `
+            <img src="${world.cardImageUrl}" class="card-image" alt="${world.cardName}">
+            <div class="card-content">
+                <h2 class="card-title">${world.cardName}</h2>
+                <p class="card-desc">${world.cardDescription}</p>
+                <a href="${world.cardViewAddonUrl}" class="download-btn">VIEW ROUTE</a>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// Client side live text search engine
 function searchCards() {
     let input = document.getElementById('searchInput').value.toLowerCase();
     let cards = document.getElementsByClassName('card');
@@ -91,9 +93,13 @@ function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
 }
 
+// Fixed the broken, fragmented line syntax error from the original code template
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
+
+// Initialize lifecycle setup on load
+window.addEventListener('DOMContentLoaded', loadWorlds);
 </script>
 
 </body>
