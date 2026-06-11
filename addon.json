@@ -1,5 +1,11 @@
 [
   {
+    "cardName": "WAG-9 LOCO",
+    "cardImageUrl": "files/wag9/pack_icon.jpg",
+    "cardViewAddonUrl": "files/wag9/wag9.html",
+    "cardDescription": "Experience the true power of the Indian Railways right inside your Minecraft world."
+  },
+  {
     "cardName": "WAG-9 LOCO by creative playz",
     "cardImageUrl": "files/wag9cpz/pack_icon.jpg",
     "cardViewAddonUrl": "files/wag9cpz/wag9.html",
@@ -11,12 +17,6 @@
     "cardViewAddonUrl": "files/vb/vb.html",
     "cardDescription": "SURPRISE 🤫 COMMING SOON.",
     "isRecommended": true
-  },
-  {
-    "cardName": "WAG-9 LOCO",
-    "cardImageUrl": "files/wag9/pack_icon.jpg",
-    "cardViewAddonUrl": "files/wag9/wag9.html",
-    "cardDescription": "SURPRISE 🤫 COMMING SOON."
   },
   {
     "cardName": "DEMU TRAINSET",
