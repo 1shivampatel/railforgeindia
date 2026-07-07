@@ -1,5 +1,23 @@
 [
   {
+    "cardName": "shatabdi coach by creative playz",
+    "cardImageUrl": "https://media.forgecdn.net/attachments/1760/543/mcpedl-png.png",
+    "cardViewAddonUrl": "/files/shatabdicpz/sabdicpz.html",
+    "cardDescription": "Experience the true power of the Indian Railways right inside your Minecraft world."
+  },
+  {
+    "cardName": "Rathyatra wap-7",
+    "cardImageUrl": "files/wag/pack_icon.jpg",
+    "cardViewAddonUrl": "files/Rathyatrawap-7/rwap-7.html",
+    "cardDescription": "Experience the true power of the Indian Railways right inside your Minecraft world."
+  },
+  {
+    "cardName": "kkr wap-7",
+    "cardImageUrl": "files/wag/pack_icon.jpg",
+    "cardViewAddonUrl": "files/Kkrwap-7/kkrwap-7.html",
+    "cardDescription": "Experience the true power of the Indian Railways right inside your Minecraft world."
+  },
+  {
     "cardName": "WAG-9 LOCO",
     "cardImageUrl": "files/wag9/pack_icon.jpg",
     "cardViewAddonUrl": "files/wag9/wag9.html",
